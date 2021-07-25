@@ -1,0 +1,562 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+/*=========== Varibales ============*/
+$header-height:3rem;
+
+/*=========== Colors ============*/
+$cyan               :      hsl(180, 66%, 49%);  
+$red                :      hsl(0, 87%, 67%) ;
+$violet             :      hsl(257, 27%, 26%) ;  
+$Gray               :      hsl(0, 0%, 75%);
+$Grayish-Violet     :      hsl(257, 7%, 63%);
+$Very-Dark-Blue     :      hsl(255, 11%, 22%);
+$Very-Dark-Violet   :      hsl(260, 8%, 14%);
+$body-color         :      #FEFBFB;
+$container-color    :      #FFF;
+
+/*=========== Font and Typography ============*/
+$body-font: 'Poppins', sans-serif;
+$biggest-font-size: 1.75rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1.125rem;
+$normal-font-size: .938rem;
+$small-font-size:.813rem;
+
+/*=========== Margin ============*/
+$mb-1  :   .5rem;
+$mb-2  :   1rem;
+$mb-3  :   1.5rem;
+$mb-4  :   2rem;
+$mb-5  :   2.5rem;
+$mb-6  :   3rem;
+
+
+/*=========== Z index ============*/
+
+$z-tooltip: 10;
+$z-fixed: 100;
+
+/* This changes the font sizes when the screen is bigger */
+
+@media screen and (min-width:968px){
+    $biggest-font-size: 3rem;
+    $h2-font-size: 1.75rem;
+    $h3-font-size: 1.25rem;
+    $normal-font-size: 1rem;
+    $small-font-size:.875rem;
+
+}
+
+html{
+    scroll-behavior: smooth;
+
+}
+
+body{
+    margin: $header-height 0 0 0;
+    font-family: $body-font;
+    font-size: $normal-font-size;
+    background-color: $body-color;
+    color: $Very-Dark-Blue;
+    line-height: 1.6;
+}
+
+h1,h2,h3,ul,p{
+    margin: 0;
+}
+
+h1,h2,h3{
+    font-weight: 600;
+    color: $Very-Dark-Violet;
+}
+
+ul{
+     padding: 0;
+     list-style: none;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+.section{
+    padding: 4rem 0 2rem;
+}
+
+.section-title, .section-title-center{
+    font-size: $h2-font-size;
+    color: $Grayish-Violet;
+    text-align: center;
+    margin: $mb-3;
+}
+
+
+/*=========== LAYOUT ============*/
+.l-main{
+    overflow: hidden;
+}
+
+.bd-container{
+    max-width: 968px;
+    width: calc(100% - 3rem);
+    margin-left: $mb-3;
+    margin-right: $mb-3;
+}
+.bd-grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.l-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-fixed;
+    background-color: $body-color;
+}
+
+
+
+/*============ NAV ============*/
+.nav{
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $mb-3;
+    margin-bottom: $mb-3;
+}
+
+@media screen and (max-width : 768px){
+    .nav__menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
+        background-color: $violet;
+        transition: .4s;
+        box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        border-radius: .5rem;
+        z-index: $z-fixed;
+        text-align: center;
+
+    }
+}
+
+
+
+.nav__item{
+    margin-top: $mb-3;
+    margin-bottom: $mb-3;
+}
+
+.nav__link {
+    color: white;
+    font-weight: 600;
+}
+
+.nav__logo, .nav__toggle{
+    color: $Very-Dark-Blue;
+    font-size: $biggest-font-size;
+    margin-top: $mb-1;
+    font-weight: 600;
+    &:hover{
+        color:$cyan;
+    }
+}
+.cyan{
+    color: $cyan;
+    font-size: 2.5rem;
+}
+
+.nav__link{
+    transition: .3s;
+    &:hover{
+        color: $cyan;
+    }
+}
+
+
+
+.nav__seperator{
+    width: 80%;
+    background-color: #bbb;
+    height: 1px;
+    opacity: .2;
+}
+
+.sign-up{
+    text-align: center;
+    margin-right:auto ;
+    margin-left:auto ;
+    background-color: $cyan;
+    padding: .5rem 0;
+    width: 80%;
+    border-radius: 25px;
+
+}
+
+.nav__toggle{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+
+.show-menu{
+    top: 5.5rem;
+}
+/*---------- Change background header ---------*/
+.scroll-header{
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+
+/*===============       HERO        ================*/
+.home__container{
+    row-gap: 1.5rem;
+    margin-top: $mb-4;
+}
+
+.home__img{
+    width: 300px;
+    justify-self: center;
+}
+
+.home__title{
+    font-size: $biggest-font-size;
+    font-weight: 700;
+    text-align: center;
+}
+
+.home__description{
+    color: $Gray;
+    text-align: center;
+}
+.get-started{
+    background-color: $cyan;
+    color: white;
+    font-weight: 600;
+    padding:.75rem 1.75rem;
+    margin: 0 auto;
+    border-radius: 45px;
+}
+
+
+/* ===================  Shorthen link container  ===================*/
+/* =================================================================*/
+
+.shorten-link__container{
+    background-image: url(../images/bg-boost-mobile.svg);
+    background-blend-mode: screen;
+    object-fit: contain;
+    background-color: $violet;
+    border-radius: 15px;
+    padding: $mb-3;
+}
+.input{
+    width: calc(100%-2rem);
+    margin-bottom: $mb-1;
+    
+}
+.shortner-input{
+    width: 100%;
+    padding: 1em 2em;
+    border-radius: 5px;
+    border:none ;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    margin-bottom: $mb-3;
+}
+
+.shorten-btn__container{
+    width: 100%;
+}
+.shorten-button{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: $normal-font-size;
+    font-weight: 600;
+    background-color: $cyan;
+    padding:.8em 2em;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+/*===============   SERVICES   ===============*/
+
+
+.services-overview__container{
+    
+    text-align: center;
+    .section__title{
+        color: $Very-Dark-Violet;
+        font-weight: 700;
+        font-size: $biggest-font-size;
+        margin-bottom: $mb-1;
+        margin-top: $mb-3;
+    }
+
+    .section__description{
+        font-size: $normal-font-size;
+        color: $Gray;
+        margin-bottom: 6rem;
+    }
+}
+
+
+
+.service__container{
+    background-color: #efefef;
+    padding: $mb-3;
+    padding-top: $mb-6;
+    position: relative;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: $mb-6;
+    .service__title{
+        font-size: 1.2rem;
+        margin-bottom: $mb-1;
+    }
+    .service__description{
+        color: $Gray;
+    }
+}
+
+.service__image{
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $violet;
+    padding: 1rem 1.3rem;
+    border-radius: 50%;
+    
+}
+
+
+
+/*============   BOOST   ===========*/
+.boost__container{
+    width: 100%;
+    padding: 4rem 1rem;
+    background-color: $violet;
+    background-image: url(../images/bg-shorten-mobile.svg) no-repeat;
+    
+    background-blend-mode: screen;
+}
+.boost{
+    color: white;
+    text-align: center;
+    font-size: $biggest-font-size;
+    margin-bottom: $mb-3;
+}
+.boost-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer{
+    background-color: $Very-Dark-Violet;
+}
+
+/*===========   FOOTER CONTAINER   ==========*/
+.footer__container{
+    text-align: center;
+    color: white;
+}
+
+.shortly{
+    color: white;
+    .blue{
+        color: $cyan;
+    }
+}
+.footer__title{
+    color: white;
+    margin-bottom: $mb-2;
+}
+
+.footer__link{
+    color: #bbb;
+    
+    margin-bottom: $mb-1;
+}
+
+
+.social-media{
+    margin-top: $mb-2;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*========== MEDIA QUERIES ==========*/
+
+/* For full-screen images on small screens */
+@media screen and (max-width: 359px){
+    .home__img,
+    .share__img,
+    .send__img{
+      width: 100%;
+    }
+  }
+
+
+
+@media screen and (min-width: 576px){
+    .home__container,
+    .services-overview__container
+    {
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+    }
+    .home__img{
+        order: 1;
+    }
+    .home__title,.home__description{
+        text-align: initial;
+    }
+    .get-started{
+        margin: 0;
+        padding: .75rem;
+        text-align: center;
+    }
+
+    .services__container{
+        grid-template-columns: repeat(3,1fr);
+        align-items: center;
+    }
+
+    .footer__container{
+        grid-template-columns: repeat(5,1fr);
+    }
+
+    .input{
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .shortner-input{
+        width: 250%;
+        margin-bottom: 0;
+    }
+    
+}
+
+@media screen and (min-width: 768px){
+    body{
+        margin: 0;
+    }
+    .section{
+        padding-top: 7rem;
+      }
+    .nav{
+        height: 4.5rem;
+    }
+    
+    .nav__menu{
+        display: flex;
+        justify-content: space-between;
+       
+    }
+    .nav__list{
+        display: flex;
+       
+        align-items: center;
+    }
+    .nav__item{
+        
+        margin-left:$mb-5;
+        margin-bottom: 0;
+    }
+    .nav__link{
+        color: $violet;
+    }
+    .nav__seperator{
+        opacity: 0;
+    }
+    
+    .nav__toggle{
+        display: none;
+    }
+
+    .home__container{
+        padding: 7rem 2rem 0;
+    }
+
+    .sign-up{
+        line-height: 1.6;
+        .nav__link{
+            text-align: center;
+            border-radius: 25px;
+            color: white;
+        }
+    }
+}
+
+
+
+
+@media screen and (min-width: 968px){
+    .bd-container{
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .home__img,
+    .share__img,
+    .send__img{
+      width: 469px;
+    }
+  
+    .home__container,
+    .share__container,
+    .send__container{
+      column-gap: 5rem;
+    }
+  }
